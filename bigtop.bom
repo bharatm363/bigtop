@@ -130,14 +130,14 @@ bigtop {
       name    = 'hadoop'
       relNotes = 'Apache Hadoop'
       version { base = '2.7.4-SNAPSHOT'; pkg = base-"-SNAPSHOT"; release = 1 }
-      tarball { destination = "${name}-${version.pkg}.tar.gz"
-                source      = "${name}-${version.pkg}-src.tar.gz" }
+      tarball { destination = "${name}-${version.base}.tar.gz"
+                source      = "${name}-${version.base}-src.tar.gz" }
       url     { download_path = "/$name/common/$name-${version.base}"
                 site = "${apache.APACHE_MIRROR}/${download_path}"
                 archive = "${apache.APACHE_ARCHIVE}/${download_path}" }
       git     { repo= "https://github.com/apache/hadoop.git"
                 ref = "branch-2.7"
-                dir = "${name}-${version.pkg}-src" }
+                dir = "${name}-${version.base}-src" }
     }
     'ignite-hadoop' {
       name    = 'ignite-hadoop'
